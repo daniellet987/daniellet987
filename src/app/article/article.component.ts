@@ -15,11 +15,15 @@ export class ArticleComponent implements OnInit {
   @Input() bookmarked?:boolean = false;
 
   @Output() bookmarkClicked:EventEmitter<any> = new EventEmitter();
-  
+
   showDetailsClicked:boolean = false;
   imageDisplayed:any;
   
   constructor() { }
+
+  // code description: 
+  // this is the article component in which I used inputs and outputs to display and interact with it in his parent component (articles list)
+  // and added the article details in it in a hidden mode that is shown when the article is clicked
 
   ngOnInit(): void {
     this.imageDisplayed =(this.image)? this.image.find((elt:any) => elt.format == 'Standard Thumbnail') : null;

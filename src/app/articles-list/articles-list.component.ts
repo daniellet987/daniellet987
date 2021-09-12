@@ -18,6 +18,11 @@ export class ArticlesListComponent implements OnInit {
   savedBookmarksString:any = [];
   constructor(private NyTimesService:NyTimesService) { }
 
+  // code description:
+  // after getting all articles I'm filling the bookmark icon if any article is bookmarked
+  // the bookmarkArticle function is triggered everytime I hit the bookmark icon.
+  // and of course when the page is destroyed I'm emptying the articles store and saving all bookmarked ones.
+
   ngOnInit(): void {
     let self = this;
     this.NyTimesService.bookmarks.subscribe(data => {

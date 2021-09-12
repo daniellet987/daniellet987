@@ -12,6 +12,11 @@ export class BookmarkPageComponent implements OnInit {
   constructor(private NyTimesService:NyTimesService, private router: Router) { }
   bookmarkedArticles:any =[];
 
+  // code description:
+  // as bookmarked articles are being store in bookmarks observable, I'm subscribing to get and display them.
+  // plus for each article I'm getting the needed image for it in getimageSource and getimageCopyRight functions
+  // and re-saving them when the page is destroyed to fill the bookmark icon in home page
+
   ngOnInit(): void {
     this.NyTimesService.bookmarks.subscribe(data => {
       this.bookmarkedArticles = (data)? data : undefined;

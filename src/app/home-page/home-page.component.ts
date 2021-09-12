@@ -45,7 +45,10 @@ export class HomePageComponent implements OnInit {
   route:any;
 
   constructor(private NyTimesService:NyTimesService, private router: Router, private location: Location) { }
-
+  // code descrition:
+  // when initializing the home page all top stories are being fetched and header title is changed according to which route we're in it in headerTitleValue function and I'm using the Router to get the location of the user
+  // and everytime the user chooses an item from the right menu all related articles are shown, the api call is executed in selectItem function
+  
   ngOnInit(): void {
     this.NyTimesService.getTopStories();
     this.route = this.location.path();

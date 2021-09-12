@@ -1,0 +1,55 @@
+.navbar{
+	position: fixed !important;
+    z-index: 999999;
+}
+
+.title{
+	text-transform: capitalize;
+}
+
+.nav-link{
+	cursor: pointer;
+	.nav-link-icon{
+		width: 26px;
+		height: 26px;
+	}
+}
+.nytimes-container{
+  width: 100vw;
+  height: 100vh;
+}
+
+mat-drawer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mr-20{
+	margin-right: 20px;
+}
+
+.mat-drawer{
+	width: 300px;
+
+	.mat-selection-list{
+		background-color: #0d6efd;
+		.list-item-selected{
+			background: rgba(0,0,0,0.2) !important;
+		}
+		.mat-list-item{
+			// &:focus{
+			// 	background: rgba(0,0,0,0) !important;
+			// }
+
+			.mat-list-item-content{
+				.mat-list-text{
+					color: #FFFFFF;
+				}
+				.mat-pseudo-checkbox{
+					display: none !important;
+				}
+			}
+		}
+	}
+}

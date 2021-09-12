@@ -1,0 +1,26 @@
+<div *ngIf="bookmarkedArticles && bookmarkedArticles.length > 0; else emptyState" class="bookmark-container">
+	<div class="row sub-container">
+		<div *ngFor="let article of bookmarkedArticles" class="col-4 bookmarked-article">
+			<mat-card class="article-card">
+			  <img mat-card-image [src]="getimageSource(article)" [alt]="getimageCopyRight(article)">
+			  <mat-card-content>
+			    <h2>{{article.title}}</h2>
+				<h4>{{article.published_date | date: 'EEEE, MMMM d, y AT h:mm a'}}</h4>
+			  </mat-card-content>
+			</mat-card>
+		</div>
+	</div>
+</div>
+<ng-template #emptyState>
+	<div class="empty-state-container">
+		 <div class="empty-state-img">
+		 	<img src="../assets/Icons/empty-state.jpeg">
+		 </div>
+		 <div class="empty-state-desc">
+		 	Nothing bookmarked yet
+		 </div>
+		 <div class="go-back-button">
+		 	<button class="go-back-style" (click)="goBackToArticles()">Home</button>
+		 </div>
+	</div>
+</ng-template>

@@ -1,0 +1,13 @@
+<div *ngIf="listOfArticles.length > 0; else emptyState" class="main-container">
+  	<app-article *ngFor="let article of listOfArticles; let i = index" [image]="article?.multimedia" [title]="article?.title" [publicationDate]="article?.published_date" [index]="i" (bookmarkClicked)="bookmarkArticle($event)" [articleAbstract]="article.abstract" [articleUrl]="article.short_url" [bookmarked]=article.bookmarked></app-article>
+</div>
+<ng-template #emptyState>
+	<div class="empty-state-container">
+		 <div class="empty-state-img">
+		 	<img src="../assets/Icons/empty-state.jpeg">
+		 </div>
+		 <div class="empty-state-desc">
+		 	Empty List
+		 </div>
+	</div>
+</ng-template>

@@ -2,7 +2,7 @@
 	<div class="image-container">
 		<img *ngIf="imageDisplayed; else noImage" src="{{imageDisplayed.url}}" alt="{{imageDisplayed.copyright}}">
 		<ng-template #noImage>
-			<img src="../assets/Icons/noimage.png">
+			<img src="./assets/Icons/noimage.png">
 		</ng-template>
 	</div>
 	<div class="article-info-container" (click)="showDetails()">
@@ -10,9 +10,9 @@
 		<h4>{{publicationDate | date: 'EEEE, MMMM d, y AT h:mm a'}}</h4>
 	</div>
 	<div class="bookmarkIcon" (click)="toggleBookmark()">
-		<img *ngIf="!bookmarked; else filled" src="../assets/Icons/icons8-bookmark.svg">
+		<img *ngIf="!bookmarked; else filled" src="./assets/Icons/icons8-bookmark.svg">
 		<ng-template #filled>
-			<img src="../assets/Icons/icons8-bookmark-filled.svg">
+			<img src="./assets/Icons/icons8-bookmark-filled.svg">
 		</ng-template>
 	</div>
 	<div *ngIf="showDetailsClicked" class="article-info-container" (click)="showDetails()">
